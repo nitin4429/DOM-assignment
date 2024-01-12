@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" name="name" id="input" placeholder="Search for Items">
+   <h2>Result</h2>
+   <ul>
+    <li class="list">HTML</li>
+    <li class="list">CSS</li>
+    <li class="list">Tailwind CSS</li>
+    <li class="list">GitHUb</li>
+    <li class="list">Javascript</li>
+   </ul> 
+   <script>
+    let input = document.getElementById('input');
+    let unlist = document
+    .querySelector('ul')
+    .getElementsByClassName('list');
+    input.addEventListener('input',() => {
+        const inputfiler = input.value.toLowerCase();
+        for(let i=0;i<unlist.length;i++){
+            const itemlist = unlist[i].innerText.toLowerCase();
+            if(inputfiler.includes(itemlist)){
+                unlist[i].style.display = "block";
+            }
+            else{
+                unlist[i].style.display = "none";
+            }
+
+        }
+    })
+
+
+   </script>
+</body>
+</html>

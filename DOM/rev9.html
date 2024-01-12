@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="login" onclick="login()">Login</button>
+    <button id="logout" onclick="logout()">Logout</button>
+    <h1 id="status"></h1>
+    <script>
+        function login(){
+            localStorage.setItem("java",true)
+            location.reload();
+        }
+        function logout(){
+            localStorage.setItem("java",false)
+            location.reload();
+        }
+        const heading = document.getElementById('status');
+        const status = localStorage.getItem("java");
+        if(status != 'false'){
+            heading.innerText = "user is logged in";
+        }
+        else{
+            heading.innerText = "user in not logged in";
+        }
+    </script>
+
+</body>
+</html>

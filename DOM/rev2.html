@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Light mode</h1>
+    <button id="btn" onclick="toggle()">Toggle Theme</button>
+    <script>
+        let heading = document.querySelector('h1');
+        let button = document.getElementById('btn');
+        function toggle(){
+            const color = document.body.style.backgroundColor;
+            if(color == 'black'){
+                document.body.style.backgroundColor = 'white';
+                heading.innerText = 'This Is Light Mode';
+                heading.style.color='black';
+            }
+            else{
+                document.body.style.backgroundColor = 'black';
+                heading.innerText = 'This Is Dark Mode';
+                heading.style.color='white';
+            }
+        }
+       
+    </script>
+</body>
+</html>
